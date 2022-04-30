@@ -1,8 +1,5 @@
 from functools import wraps
 from typing import Callable
-"""
-The code is a decorator, which makes the decorated function prints "Surprise!" instead of its original execution.
-"""
 
 
 def surprise_decorator(func: Callable) -> Callable:
