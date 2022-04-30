@@ -1,8 +1,5 @@
 from functools import wraps
 from typing import Callable
-"""
-The code is a decorator, it execute the decorated function twice. 
-"""
 
 
 def twice_decorator(func: Callable) -> Callable:
