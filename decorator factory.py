@@ -1,18 +1,11 @@
 from functools import wraps
 from typing import Callable
-"""
-The code is a decorator factory.
-The in the factory decorator receives an argument type, and validates in the func call, that the received
-argument is from the defined type.
-If it is, the factory returns the decorated function.
-Else, it raise a TypeError exception.
-"""
 
 
-def decorator_factory(correct_type: type) -> Callable:
+def type_validator(correct_type: type) -> Callable:
     """
     The decorator factory receives a variable type.
-    If the decorated function receives an argument which not from the received type, a TypeError exception raised.
+    If the decorated function receives an argument which is not from the received type, a TypeError exception is raised.
     Else, it returns the decorated function.
     :param correct_type: The wanted decorated argument type.
     :return: The decorated function.
@@ -40,7 +33,7 @@ def decorator_factory(correct_type: type) -> Callable:
     return decorator
 
 
-@decorator_factory(int)
+@type_validator(int)
 def print_value(val: int) -> None:
     """
     The function prints the received value.
@@ -53,8 +46,5 @@ def print_value(val: int) -> None:
 
 
 if __name__ == "__main__":
-    try:
-        print_value("7")
-    except TypeError:
-        print("Type error exception raised.")
+    print_value("7")
     print_value(80)
