@@ -1,10 +1,4 @@
 import atexit
-"""
-The code does:
-1. Demonstrate static method usage.
-2. Demonstrate property method usage.
-3. Prints good bye message at the end of the code's run.
-"""
 
 
 class Example:
